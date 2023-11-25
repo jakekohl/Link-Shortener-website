@@ -1,0 +1,25 @@
+{
+  "name": "link-shortener-website",
+  "version": "1.0.0",
+  "description": "Dev Project to learn JavaScript",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.0"
+  },
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakekohl/Link-Shortener-website.git"
+  },
+  "author": "jakekohl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jakekohl/Link-Shortener-website/issues"
+  },
+  "homepage": "https://github.com/jakekohl/Link-Shortener-website#readme"
+}
