@@ -12,7 +12,14 @@ Run the following commands
 
 `npm install`
 
-Install Doppler, then get setup using
-`doppler setup`.
+Create a Doppler by navigating to https://doppler.com, then get setup using `doppler setup`.
+
+Create a bit.ly account and generate an API Token at https://app.bitly.com/settings/api/
+
+Create a secret in the doppler setup you created with the key `BIT_KEY`
 
 Run command: `doppler run node app.js`
+
+## Troubleshooting
+
+TODO
