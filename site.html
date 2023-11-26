@@ -1,0 +1,56 @@
+<!-- site.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ... your existing head content ... -->
+</head>
+
+<body>
+  <div class="App">
+    <header class="App-header">
+      <h1>Link Shortener Website!</h1>
+      <h3>A DevProject by <a href='https://github.com/jakekohl'>jakekohl</a>.</h3>
+      <h3>Uses the Bitly API to generate a shortened URL.</h3>
+    </header>
+
+    <label for="urlInput">Enter URL:</label>
+    <input type="text" id="urlInput" name="urlInput">
+    <button id="generateButton">Generate</button>
+
+    <form>
+      <label for="outputUrl">Output:</label>
+      <input type="text" id="outputUrl" readonly>
+    </form>
+
+    <script>
+        // Attach an event listener to the button
+        document.getElementById("generateButton").addEventListener("click", async function() {
+            const inputUrl = document.getElementById("urlInput").value;
+            function delay(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            try {
+                // Make an AJAX call to your server-side function
+                const response = await fetch(`/shorten-url/${encodeURIComponent(inputUrl)}`);
+                
+                while (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    await delay(2000);
+                }
+
+                const data = await response.json();
+                console.log('-------------------------------------------------------------')
+                console.log(data)
+                // Update the UI with the result
+                document.getElementById("outputUrl").value = data.shortUrl;
+                } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+  </div>
+</body>
+
+</html>

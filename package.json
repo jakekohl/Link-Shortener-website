@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Dev Project to learn JavaScript",
   "main": "app.js",
+  "type": "module",
   "directories": {
     "test": "tests"
   },
@@ -10,7 +11,8 @@
     "cypress": "^13.6.0"
   },
   "scripts": {
-    "test": "test.js"
+    "test": "test.js",
+    "app": "app.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/jakekohl/Link-Shortener-website/issues"
   },
-  "homepage": "https://github.com/jakekohl/Link-Shortener-website#readme"
+  "homepage": "https://github.com/jakekohl/Link-Shortener-website#readme",
+  "dependencies": {
+    "doppler": "^1.0.0",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  }
 }
