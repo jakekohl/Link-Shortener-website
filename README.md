@@ -20,6 +20,10 @@ Create a secret in the doppler setup you created with the key `BIT_KEY`
 
 Run command: `doppler run node app.js`
 
+## To run Cypress testing
+
+`npm run cypress:open`
+
 ## Troubleshooting
 
 TODO
