@@ -15,13 +15,13 @@
       <h3>Uses the Bitly API to generate a shortened URL.</h3>
     </header>
 
-    <label for="urlInput">Enter URL:</label>
-    <input type="text" id="urlInput" name="urlInput">
+    <label for="urlInputLabel">Enter URL:</label>
+    <input type="text" id="urlInput" name="urlInput" data-cy="urlInput">
     <button id="generateButton">Generate</button>
 
     <form>
       <label for="outputUrl">Output:</label>
-      <input type="text" id="outputUrl" readonly>
+      <input type="text" id="outputUrl" data-cy="outputUrl" readonly>
     </form>
 
     <script>

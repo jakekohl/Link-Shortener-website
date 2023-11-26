@@ -12,7 +12,8 @@
   },
   "scripts": {
     "test": "test.js",
-    "app": "app.js"
+    "app": "app.js",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
