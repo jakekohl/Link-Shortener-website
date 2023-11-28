@@ -24,9 +24,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Doppler
+      - name: Install Doppler-CLI
         uses: DopplerHQ/cli-action@v2
-        with:
-          token: ${{ secrets.DOPPLER_TOKEN }}
-          command: run -- node app.js
+
+      - name: Run
+        run: doppler run node app.js 
+        env: 
+          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+
 
