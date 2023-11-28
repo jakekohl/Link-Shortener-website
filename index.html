@@ -33,7 +33,7 @@
             }
             try {
                 // Make an AJAX call to your server-side function
-                const response = await fetch(`/shorten-url/${encodeURIComponent(inputUrl)}`);
+                const response = await fetch(`:3000/shorten-url/${encodeURIComponent(inputUrl)}`);
                 
                 while (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
