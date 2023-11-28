@@ -41,23 +41,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-  build:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '16.x'
-      - run: |
-          npm ci
-          npm install build
-          node app.js
-          npm install doppler
-          let secret = process.env.DOPPLER_TOKEN
-          doppler run --token=`${secret}` node app.js
-      - uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          force: true
-          branch: gh-pages
