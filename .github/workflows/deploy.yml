@@ -28,7 +28,7 @@ jobs:
         run: npm run build
 
       - name: Doppler
-        uses: DopplerHQ/cli-action
+        uses: DopplerHQ/cli-action@v2
         with:
           token: ${{ secrets.DOPPLER_TOKEN }}
           command: run -- node app.js
