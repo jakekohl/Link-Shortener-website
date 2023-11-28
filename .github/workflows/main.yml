@@ -14,7 +14,7 @@ jobs:
     - run: |
         npm ci
         npm install build
-        doppler secrets download --no-file --format env --no-prompt --config dev
+        node app.js
     - run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
