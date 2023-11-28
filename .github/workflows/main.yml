@@ -15,6 +15,9 @@ jobs:
         npm ci
         npm install build
         node app.js
+        npm install doppler
+        let secret = process.env.DOPPLER_TOKEN
+        doppler run --token=`${secret}` node app.js
     - run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
