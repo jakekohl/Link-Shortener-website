@@ -11,7 +11,6 @@
     "cypress": "^13.6.0"
   },
   "scripts": {
-    "test": "test.js",
     "app": "app.js",
     "cypress:open": "cypress open"
   },
