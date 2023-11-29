@@ -1,4 +1,4 @@
 node_modules*
 .vscode*
-cypress.config.js
 cypress/downloads
+database/*

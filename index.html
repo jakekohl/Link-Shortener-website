@@ -18,6 +18,7 @@
     <label for="urlInputLabel">Enter URL:</label>
     <input type="text" id="urlInput" name="urlInput" data-cy="urlInput">
     <button id="generateButton">Generate</button>
+    <button id="checkLimitsButton">Check Account Limits</button>
 
     <form>
       <label for="outputUrl">Output:</label>
@@ -34,6 +35,31 @@
             try {
                 // Make an AJAX call to your server-side function
                 const response = await fetch(`shorten-url/${encodeURIComponent(inputUrl)}`);
+                
+                while (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    await delay(2000);
+                }
+
+                const data = await response.json();
+                console.log('-------------------------------------------------------------')
+                console.log(data)
+                // Update the UI with the result
+                document.getElementById("outputUrl").value = data.shortUrl;
+                } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+    <script>
+        // Attach an event listener to the button
+        document.getElementById("checkLimitsButton").addEventListener("click", async function() {
+            function delay(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            try {
+                // Make an AJAX call to your server-side function
+                const response = await fetch(`check-limits`);
                 
                 while (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
