@@ -2,6 +2,21 @@
 
 This project is a learning solution from [DevProjects](https://www.codementor.io/projects/web/link-shortener-website-brqjanf6zq).
 
+## Project Requirements
+
+The user will input a valid URL and click a "shorten" button. The shortened URL will then be displayed.
+
+Your UI should include the following elements:
+
+* Text input for the user's URL
+* "Shorten" button to trigger the link shortening
+* Display area to return the shortened URL to the user
+
+### Bonus Requirements
+
+* Make it easier for the user to copy the shortened URL by adding a "copy" button for one-click copying.
+* Try to allow the user to automatically copy the shortened URL by using libraries like SimpleCopy or ClipboardJS.
+
 ## How to get started
 
 Run the following commands
