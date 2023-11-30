@@ -37,7 +37,7 @@ async function shortenUrl(longUrl) {
         });
 
         const data = await response.json();
-        logMessage('DEBUG',data);
+        logMessage('DEBUG',JSON.stringify(data));  
         writeCache(data);
         return data.link;
     }
@@ -104,7 +104,7 @@ async function checkLimits() {
         });
 
         const data = await response.json();
-        logMessage('DEBUG',data);
+        logMessage('DEBUG',JSON.stringify(data));
         const encodes = data.plan_limits.find(item => item.name === 'encodes');
         const count = encodes.count;
         const limit = encodes.limit;
@@ -130,19 +130,19 @@ app.get('/shorten-url/:longUrl', async (req, res) => {
     logMessage('DEBUG',`Received request for shortening the URL ${longUrl}`)
     let cacheCheck = checkCache(longUrl);
     if (cacheCheck) {
-        logMessage('DEBUG',`Returning:, ${cacheCheck}`);
+        logMessage('DEBUG',`Returning: ${cacheCheck}`);
         return cacheCheck;
     }
     // Call your shortenUrl function here
     const shortUrl = await shortenUrl(longUrl);
-    logMessage('DEBUG',`Returning:, ${shortUrl}`);
+    logMessage('DEBUG',`Returning: ${shortUrl}`);
     res.json({ shortUrl });
 });
 
 // Listens for async check-limits requests
 app.get('/check-limits', async (req, res) => {
     const limits = await checkLimits();
-    logMessage('DEBUG',`Returning:, ${limits}`);
+    logMessage('DEBUG',`Returning: ${limits}`);
     res.json({ limits });
 });
 
