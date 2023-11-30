@@ -1,4 +1,4 @@
 node_modules*
 .vscode*
 cypress/downloads
-urlCache.json
+database/urlCache.json
