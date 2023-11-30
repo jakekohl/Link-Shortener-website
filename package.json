@@ -12,7 +12,8 @@
   },
   "scripts": {
     "app": "app.js",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cy:run": "cypress run --browser chrome"
   },
   "repository": {
     "type": "git",
